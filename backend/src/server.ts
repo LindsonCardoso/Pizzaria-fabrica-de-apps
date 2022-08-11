@@ -1,6 +1,7 @@
 import express, {Request, Response, NextFunction } from "express";
 import 'express-async-errors'
 import cors from 'cors'
+import path from 'path'
 
 import { router } from "./routes";
 
@@ -10,7 +11,13 @@ app.use(cors());
 
 app.use(router);
 
-//midwls de protecao de req
+//criando uma rota estatica com express
+app.use(
+  '/files',
+  express.static(path.resolve(__dirname, '../', 'tmp'))
+)
+
+  //midwls de protecao de req
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
   if (err instanceof Error) {
