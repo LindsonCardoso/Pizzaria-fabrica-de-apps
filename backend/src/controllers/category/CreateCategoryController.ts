@@ -1,0 +1,16 @@
+import { Request, Response } from 'express'
+import { CreateCategoryService } from '../../services/category/CreateCategoryService'
+
+class CreateCategoryController{
+  async handle(req: Request, res: Response) {
+
+
+    const createUserService = new CreateCategoryService();
+    const category = await createUserService.execute();
+
+    return res.json(category)
+  }
+
+}
+
+export { CreateCategoryController}
