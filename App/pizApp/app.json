@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "pizApp",
+    "slug": "pizApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
